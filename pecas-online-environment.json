@@ -1,12 +1,12 @@
 {
-  "name": "Peças Online API",
+  "name": "Peças Online Mock API",
   "endpointPrefix": "",
   "latency": 200,
   "port": 3000,
   "routes": [
     {
       "method": "get",
-      "endpoint": "/api/v1/pecas",
+      "endpoint": "v1/pecas",
       "responses": [
         {
           "statusCode": 200,
@@ -15,6 +15,10 @@
             {
               "key": "Content-Type",
               "value": "application/json"
+            },
+            {
+              "key": "X-Mock",
+              "value": "true"
             }
           ],
           "uuid": "6ca47a3d-6945-4516-b767-cd329520d66c",
@@ -40,7 +44,7 @@
     },
     {
       "method": "get",
-      "endpoint": "/api/v1/pecas/categoria/:categoria",
+      "endpoint": "v1/pecas/categoria/:categoria",
       "responses": [
         {
           "statusCode": 200,
@@ -49,6 +53,10 @@
             {
               "key": "Content-Type",
               "value": "application/json"
+            },
+            {
+              "key": "X-Mock",
+              "value": "true"
             }
           ],
           "uuid": "3fef7d6c-d2c7-4b29-9ad5-f326b5878fc8",
@@ -74,7 +82,7 @@
     },
     {
       "method": "get",
-      "endpoint": "/api/v1/pecas/:id",
+      "endpoint": "v1/pecas/:id",
       "responses": [
         {
           "statusCode": 200,
@@ -83,6 +91,10 @@
             {
               "key": "Content-Type",
               "value": "application/json"
+            },
+            {
+              "key": "X-Mock",
+              "value": "true"
             }
           ],
           "uuid": "d7386c86-47e0-4999-a0e7-5d40bd1193e7",
@@ -108,7 +120,7 @@
     },
     {
       "method": "get",
-      "endpoint": "/api/v1/fornecedores",
+      "endpoint": "v1/fornecedores",
       "responses": [
         {
           "statusCode": 200,
@@ -117,6 +129,10 @@
             {
               "key": "Content-Type",
               "value": "application/json"
+            },
+            {
+              "key": "X-Mock",
+              "value": "true"
             }
           ],
           "uuid": "37ed5af2-4eea-4847-b0b0-4e16a54dd6db",
@@ -142,7 +158,7 @@
     },
     {
       "method": "get",
-      "endpoint": "/api/v1/fornecedores/:id",
+      "endpoint": "v1/fornecedores/:id",
       "responses": [
         {
           "statusCode": 200,
@@ -151,6 +167,10 @@
             {
               "key": "Content-Type",
               "value": "application/json"
+            },
+            {
+              "key": "X-Mock",
+              "value": "true"
             }
           ],
           "uuid": "e1131caa-2733-4967-bcff-134c9bb96030",
@@ -176,7 +196,7 @@
     },
     {
       "method": "post",
-      "endpoint": "/api/v1/pecas",
+      "endpoint": "v1/pecas",
       "responses": [
         {
           "statusCode": 201,
@@ -185,6 +205,10 @@
             {
               "key": "Content-Type",
               "value": "application/json"
+            },
+            {
+              "key": "X-Mock",
+              "value": "true"
             }
           ],
           "uuid": "b93e9805-abd3-4f04-a441-a3ae8736a8e4",
@@ -254,7 +278,12 @@
   "cors": true,
   "headers": [],
   "proxyReqHeaders": [],
-  "proxyResHeaders": [],
+  "proxyResHeaders": [
+    {
+      "key": "X-Mock",
+      "value": "false"
+    }
+  ],
   "data": [],
   "callbacks": []
 }
