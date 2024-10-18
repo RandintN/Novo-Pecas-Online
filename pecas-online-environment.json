@@ -1,0 +1,260 @@
+{
+  "name": "Peças Online API",
+  "endpointPrefix": "",
+  "latency": 200,
+  "port": 3000,
+  "routes": [
+    {
+      "method": "get",
+      "endpoint": "/api/v1/pecas",
+      "responses": [
+        {
+          "statusCode": 200,
+          "body": "[\n  {\n    \"id\": 1,\n    \"nome\": \"Filtro de Óleo\",\n    \"categoria\": \"Filtros\",\n    \"descricao\": \"Filtro de óleo para motores 1.6\",\n    \"preco_estimado\": 120,\n    \"fornecedores\": [\n      {\n        \"id\": 10,\n        \"nome\": \"Autopeças XYZ\",\n        \"contato\": \"autopecas@xyz.com\",\n        \"telefone\": \"+55 11 98765-4321\"\n      },\n      {\n        \"id\": 12,\n        \"nome\": \"Loja de Peças Alfa\",\n        \"contato\": \"contato@alfapecas.com\",\n        \"telefone\": \"+55 11 91234-5678\"\n      }\n    ]\n  },\n  {\n    \"id\": 2,\n    \"nome\": \"Bateria 12V\",\n    \"categoria\": \"Elétrica\",\n    \"descricao\": \"Bateria para veículos leves\",\n    \"preco_estimado\": 300,\n    \"fornecedores\": [\n      {\n        \"id\": 11,\n        \"nome\": \"Baterias ABC\",\n        \"contato\": \"contato@abc.com\",\n        \"telefone\": \"+55 21 91234-5678\"\n      },\n      {\n        \"id\": 13,\n        \"nome\": \"Autopeças Beta\",\n        \"contato\": \"vendas@betaauto.com\",\n        \"telefone\": \"+55 31 99876-5432\"\n      }\n    ]\n  }\n]",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "uuid": "6ca47a3d-6945-4516-b767-cd329520d66c",
+          "latency": 0,
+          "label": "",
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "uuid": "15c90b92-5e91-41f2-8100-00cd9de8fb40",
+      "type": "http",
+      "documentation": "",
+      "responseMode": null
+    },
+    {
+      "method": "get",
+      "endpoint": "/api/v1/pecas/categoria/:categoria",
+      "responses": [
+        {
+          "statusCode": 200,
+          "body": "[\n  {\n    \"id\": 3,\n    \"nome\": \"Filtro de Ar\",\n    \"categoria\": \"Filtros\",\n    \"descricao\": \"Filtro de ar esportivo\",\n    \"preco_estimado\": 80,\n    \"fornecedor\": {\n      \"id\": 12,\n      \"nome\": \"Autopeças Turbo\",\n      \"contato\": \"turbo@autopecas.com\",\n      \"telefone\": \"+55 31 99876-5432\"\n    }\n  }\n]",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "uuid": "3fef7d6c-d2c7-4b29-9ad5-f326b5878fc8",
+          "latency": 0,
+          "label": "",
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "uuid": "8ab88d76-ca4f-4afb-8588-fc3b813296f4",
+      "type": "http",
+      "documentation": "",
+      "responseMode": null
+    },
+    {
+      "method": "get",
+      "endpoint": "/api/v1/pecas/:id",
+      "responses": [
+        {
+          "statusCode": 200,
+          "body": "{\n  \"id\": 1,\n  \"nome\": \"Filtro de Óleo\",\n  \"categoria\": \"Filtros\",\n  \"descricao\": \"Filtro de óleo para motores 1.6\",\n  \"preco_estimado\": 120,\n  \"fornecedor\": {\n    \"id\": 10,\n    \"nome\": \"Autopeças XYZ\",\n    \"contato\": \"autopecas@xyz.com\",\n    \"telefone\": \"+55 11 98765-4321\",\n    \"endereco\": {\n      \"rua\": \"Av. das Indústrias\",\n      \"numero\": 123,\n      \"cidade\": \"São Paulo\",\n      \"estado\": \"SP\",\n      \"cep\": \"01010-000\"\n    }\n  }\n}",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "uuid": "d7386c86-47e0-4999-a0e7-5d40bd1193e7",
+          "latency": 0,
+          "label": "",
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "uuid": "de146080-727f-490b-a2a5-3294439dae0e",
+      "type": "http",
+      "documentation": "",
+      "responseMode": null
+    },
+    {
+      "method": "get",
+      "endpoint": "/api/v1/fornecedores",
+      "responses": [
+        {
+          "statusCode": 200,
+          "body": "[\n  {\n    \"id\": 10,\n    \"nome\": \"Autopeças XYZ\",\n    \"contato\": \"autopecas@xyz.com\",\n    \"telefone\": \"+55 11 98765-4321\",\n    \"endereco\": {\n      \"rua\": \"Av. das Indústrias\",\n      \"numero\": 123,\n      \"cidade\": \"São Paulo\",\n      \"estado\": \"SP\",\n      \"cep\": \"01010-000\"\n    }\n  },\n  {\n    \"id\": 11,\n    \"nome\": \"Baterias ABC\",\n    \"contato\": \"contato@abc.com\",\n    \"telefone\": \"+55 21 91234-5678\",\n    \"endereco\": {\n      \"rua\": \"Rua das Baterias\",\n      \"numero\": 456,\n      \"cidade\": \"Rio de Janeiro\",\n      \"estado\": \"RJ\",\n      \"cep\": \"20000-000\"\n    }\n  }\n]",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "uuid": "37ed5af2-4eea-4847-b0b0-4e16a54dd6db",
+          "latency": 0,
+          "label": "",
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "uuid": "5eb521f5-4d70-4814-99b6-4c1e08c985f6",
+      "type": "http",
+      "documentation": "",
+      "responseMode": null
+    },
+    {
+      "method": "get",
+      "endpoint": "/api/v1/fornecedores/:id",
+      "responses": [
+        {
+          "statusCode": 200,
+          "body": "{\n  \"id\": 10,\n  \"nome\": \"Autopeças XYZ\",\n  \"contato\": \"autopecas@xyz.com\",\n  \"telefone\": \"+55 11 98765-4321\",\n  \"endereco\": {\n    \"rua\": \"Av. das Indústrias\",\n    \"numero\": 123,\n    \"cidade\": \"São Paulo\",\n    \"estado\": \"SP\",\n    \"cep\": \"01010-000\"\n  },\n  \"pecas_disponiveis\": [\n    {\n      \"id\": 1,\n      \"nome\": \"Filtro de Óleo\",\n      \"categoria\": \"Filtros\",\n      \"descricao\": \"Filtro de óleo para motores 1.6\",\n      \"preco_estimado\": 120\n    }\n  ]\n}",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "uuid": "e1131caa-2733-4967-bcff-134c9bb96030",
+          "latency": 0,
+          "label": "",
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "uuid": "0ba03f34-3624-4dd1-9596-bd86c6487bce",
+      "type": "http",
+      "documentation": "",
+      "responseMode": null
+    },
+    {
+      "method": "post",
+      "endpoint": "/api/v1/pecas",
+      "responses": [
+        {
+          "statusCode": 201,
+          "body": "{\n  \"message\": \"Peça adicionada com sucesso!\",\n  \"pecaId\": 4\n}",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "uuid": "b93e9805-abd3-4f04-a441-a3ae8736a8e4",
+          "latency": 0,
+          "label": "",
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "uuid": "4099e33c-9ebf-4eae-9cde-81513c6155c2",
+      "type": "http",
+      "documentation": "",
+      "responseMode": null
+    }
+  ],
+  "proxyMode": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "uuid": "38d72e02-1b07-4b5f-b35f-3e04bef532a6",
+  "lastMigration": 32,
+  "hostname": "",
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "15c90b92-5e91-41f2-8100-00cd9de8fb40"
+    },
+    {
+      "type": "route",
+      "uuid": "8ab88d76-ca4f-4afb-8588-fc3b813296f4"
+    },
+    {
+      "type": "route",
+      "uuid": "de146080-727f-490b-a2a5-3294439dae0e"
+    },
+    {
+      "type": "route",
+      "uuid": "5eb521f5-4d70-4814-99b6-4c1e08c985f6"
+    },
+    {
+      "type": "route",
+      "uuid": "0ba03f34-3624-4dd1-9596-bd86c6487bce"
+    },
+    {
+      "type": "route",
+      "uuid": "4099e33c-9ebf-4eae-9cde-81513c6155c2"
+    }
+  ],
+  "folders": [],
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "cors": true,
+  "headers": [],
+  "proxyReqHeaders": [],
+  "proxyResHeaders": [],
+  "data": [],
+  "callbacks": []
+}
