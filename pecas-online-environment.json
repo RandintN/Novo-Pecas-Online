@@ -231,6 +231,52 @@
       "type": "http",
       "documentation": "",
       "responseMode": null
+    },
+    {
+      "method": "post",
+      "endpoint": "v1/fornecedores",
+      "responses": [
+        {
+          "statusCode": 201,
+          "body": "{\r\n  \"empresa\": \"Auto Peças Brasil\",\r\n  \"sigla\": \"APB\",\r\n  \"descricao\": \"Distribuidora de peças automotivas para carros nacionais e importados.\",\r\n  \"cnpj\": \"12.345.678/0001-99\", \r\n  \"inscricao\": \"123456789\",\r\n  \"endereco\": \"Rua das Flores, 123\",\r\n  \"cidade\": \"São Paulo\",\r\n  \"estado\": \"SP\",\r\n  \"cep\": \"01234-567\",\r\n  \"bairro\": \"Jardim Primavera\",\r\n  \"fonePecas\": \"(11) 3333-4444\",\r\n  \"whatsappPecas\": \"(11) 99999-8888\", \r\n  \"whatsappGeral\": \"(11) 98888-7777\", \r\n  \"emailPecas\": \"pecas@autopecasbrasil.com\",\r\n  \"emailEstoque\": \"estoque@autopecasbrasil.com\",\r\n  \"emailContasPagar\": \"financeiro@autopecasbrasil.com\",\r\n  \"emailNotaFiscal\": \"nfe@autopecasbrasil.com\",\r\n  \"webSite\": \"www.autopecasbrasil.com\",\r\n  \"vendedores\": \"João Silva, Maria Oliveira\",\r\n  \"assinatura\": \"b\", \r\n  \"empresasGrupo\": \"Auto Peças Sul, Auto Peças Norte\" \r\n}",
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-Mock",
+              "value": "true"
+            }
+          ],
+          "uuid": "e46c21f3-6ae0-4b22-82ca-62d510736f8e",
+          "latency": 0,
+          "label": "",
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "$.empresa",
+              "value": "Auto Peças Brasil",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": true,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "uuid": "ac4fb77b-de9e-4479-840e-356726cf9682",
+      "type": "http",
+      "documentation": "Cadastro de um novo fornecedor",
+      "responseMode": null
     }
   ],
   "proxyMode": false,
@@ -270,6 +316,10 @@
     {
       "type": "route",
       "uuid": "4099e33c-9ebf-4eae-9cde-81513c6155c2"
+    },
+    {
+      "type": "route",
+      "uuid": "ac4fb77b-de9e-4479-840e-356726cf9682"
     }
   ],
   "folders": [],
