@@ -1,11 +1,18 @@
 FROM node:18-alpine
 
-RUN npm install -g @mockoon/cli
+RUN npm install -g @mockoon/cli@8.4.0
+COPY ./pecas-online-environment.json ./pecas-online-environment.json
 
-WORKDIR /mockoon
+# Install curl for healthcheck and tzdata for timezone support.
+RUN apk --no-cache add curl tzdata
 
-COPY pecas-online-environment.json /mockoon/environment.json
+# Do not run as root.
+RUN adduser --shell /bin/sh --disabled-password --gecos "" mockoon
+RUN chown -R mockoon ./pecas-online-environment.json
+USER mockoon
 
 EXPOSE 3000
 
-CMD ["mockoon-cli", "start", "--data", "/mockoon/environment.json", "--daemon-off"]
+ENTRYPOINT ["mockoon-cli","start","--disable-log-to-file","--data","./pecas-online-environment.json","--port","3000"]
+
+# Usage: docker run -p <host_port>:<container_port> mockoon-test
