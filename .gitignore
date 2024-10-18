@@ -1,0 +1,47 @@
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Arquivos de cache do IntelliJ
+out/
+target/
+
+# Mac OS X
+.DS_Store
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+
+# Arquivos de build
+/build/
+/dist/
+/node_modules/
+/.gradle/
+/.mvn/
+/generated/
+
+# Configurações pessoais de execução/debug do IntelliJ
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries
+.idea/**/gradle.xml
+.idea/**/libraries
+
+# Arquivos de configuração Maven
+*.class
+*.jar
+*.war
+*.ear
+
+# Arquivos de cache Kotlin
+*.kotlin_metadata
